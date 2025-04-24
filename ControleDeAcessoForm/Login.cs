@@ -43,11 +43,23 @@ namespace ControleDeAcessoForm
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (!checkBox1.Checked)
-            
-             
+
+
                 txtSenha.UseSystemPasswordChar = true;
-                else
+            else
                 txtSenha.UseSystemPasswordChar = false;
+
+        }
+
+        private void bntConsultar_Click(object sender, EventArgs e)
+        {
+            RegistroDeAcesso registroDeAcesso = new();
+            registroDeAcesso.Show();
+            this.Hide();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -29,7 +29,7 @@ namespace ControleDeAcessoForm
 
             Login login = new Login();
             login.Show();
-
+            this.Hide();
         }
 
         private void bntCadastrar_Click(object sender, EventArgs e)

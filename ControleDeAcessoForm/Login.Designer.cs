@@ -35,11 +35,12 @@
             label1 = new Label();
             label2 = new Label();
             checkBox1 = new CheckBox();
+            bntConsultar = new Button();
             SuspendLayout();
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(162, 217);
+            bntCadastrar.Location = new Point(163, 217);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(97, 23);
             bntCadastrar.TabIndex = 0;
@@ -64,6 +65,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(178, 23);
             txtEmail.TabIndex = 2;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtSenha
             // 
@@ -102,11 +104,22 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // bntConsultar
+            // 
+            bntConsultar.Location = new Point(365, 217);
+            bntConsultar.Name = "bntConsultar";
+            bntConsultar.Size = new Size(75, 23);
+            bntConsultar.TabIndex = 7;
+            bntConsultar.Text = "Consultar";
+            bntConsultar.UseVisualStyleBackColor = true;
+            bntConsultar.Click += bntConsultar_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bntConsultar);
             Controls.Add(checkBox1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -130,5 +143,6 @@
         private Label label1;
         private Label label2;
         private CheckBox checkBox1;
+        private Button bntConsultar;
     }
 }
