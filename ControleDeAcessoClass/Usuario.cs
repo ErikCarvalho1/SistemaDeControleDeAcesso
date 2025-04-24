@@ -16,12 +16,10 @@ namespace ControleDeAcessoClass
         public string Email { get; set; }
         public int Tipo_Usuario { get; set; }
         public string Senha { get; set; }
-        public byte[] Foto { get; set; }
-        public DateTime Criado_Em { get; set; }
-        public bool Ativo { get; set; }
+       public bool Ativo { get; set; }
 
         public Usuario() { }
-        public Usuario(int id, string nome, string cpf, string email, int tipo_usuario, string senha,byte[] foto,DateTime criado_em, bool ativo)
+        public Usuario(int id, string nome, string cpf, string email, int tipo_usuario, string senha,bool ativo)
         {
             Id = id;
             Nome = nome;
@@ -29,9 +27,7 @@ namespace ControleDeAcessoClass
             Email = email;
             Tipo_Usuario = tipo_usuario;
             Senha = senha;
-            Foto = foto;
-            Criado_Em = criado_em;
-            Ativo = ativo;
+           
 
 
         }
@@ -39,7 +35,6 @@ namespace ControleDeAcessoClass
         {
             Id = id;
             Nome = nome;
-            
             Cpf = cpf;
           Email = email;
             //txtNome.Text, txtEmail.Text, txtCpf.Text, txtSenha.Text
@@ -53,10 +48,7 @@ namespace ControleDeAcessoClass
             Tipo_Usuario = tipo_usuario;
             Senha = senha;
         }
-        public Usuario (DateTime criado_em)
-        {
-            Criado_Em = criado_em;
-        }
+      
         public Usuario(string email,  string senha, bool ativo)
         {
             Email = email;
@@ -82,9 +74,7 @@ namespace ControleDeAcessoClass
                 dr.GetString(3),
                 dr.GetInt32(4),
                 dr.GetString(5),
-                dr.GetValue(6) == DBNull.Value ? null : (byte[])dr.GetValue(6),
-                dr.GetDateTime(7),
-                dr.GetBoolean(8)
+                dr.GetBoolean(6)
 
                 );
 

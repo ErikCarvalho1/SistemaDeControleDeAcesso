@@ -1,4 +1,5 @@
 using ControleDeAcessoClass;
+using System.Diagnostics.Eventing.Reader;
 
 namespace ControleDeAcessoForm
 {
@@ -37,6 +38,17 @@ namespace ControleDeAcessoForm
             {
                 MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox1.Checked)
+            
+             
+                txtSenha.UseSystemPasswordChar = true;
+                else
+                txtSenha.UseSystemPasswordChar = false;
+
         }
     }
 }

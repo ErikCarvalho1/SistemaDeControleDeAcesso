@@ -34,6 +34,7 @@
             txtSenha = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // bntCadastrar
@@ -66,10 +67,11 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(162, 175);
+            txtSenha.Location = new Point(163, 180);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(178, 23);
             txtSenha.TabIndex = 3;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -89,11 +91,23 @@
             label2.TabIndex = 5;
             label2.Text = "Senha";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(347, 180);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(42, 19);
+            checkBox1.TabIndex = 6;
+            checkBox1.Text = "ver";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtSenha);
@@ -115,5 +129,6 @@
         private TextBox txtSenha;
         private Label label1;
         private Label label2;
+        private CheckBox checkBox1;
     }
 }

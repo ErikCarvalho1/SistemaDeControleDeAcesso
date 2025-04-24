@@ -126,6 +126,7 @@
             // cmbTipo
             // 
             cmbTipo.FormattingEnabled = true;
+            cmbTipo.Items.AddRange(new object[] { "Administrador", "Funcionário", "Visitante" });
             cmbTipo.Location = new Point(313, 203);
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(121, 23);
