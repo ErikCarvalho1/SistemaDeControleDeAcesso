@@ -8,24 +8,63 @@ using System.Threading.Tasks;
 
 namespace ControleDeAcessoClass
 {
-    class Usuario
+   public class Usuario
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string CPf { get; set; }
+        public string Cpf { get; set; }
         public string Email { get; set; }
+        public int Tipo_Usuario { get; set; }
         public string Senha { get; set; }
+        public byte[] Foto { get; set; }
+        public DateTime Criado_Em { get; set; }
+        public bool Ativo { get; set; }
 
         public Usuario() { }
-        public Usuario(int id, string nome, string cpf, string email, string senha)
+        public Usuario(int id, string nome, string cpf, string email, int tipo_usuario, string senha,byte[] foto,DateTime criado_em, bool ativo)
         {
             Id = id;
             Nome = nome;
-            CPf = cpf;
+            Cpf = cpf;
             Email = email;
+            Tipo_Usuario = tipo_usuario;
             Senha = senha;
+            Foto = foto;
+            Criado_Em = criado_em;
+            Ativo = ativo;
+
 
         }
+        public Usuario( int id,string nome ,string cpf ,string email)
+        {
+            Id = id;
+            Nome = nome;
+            
+            Cpf = cpf;
+          Email = email;
+            //txtNome.Text, txtEmail.Text, txtCpf.Text, txtSenha.Text
+        }
+        public Usuario( string nome, string email, string cpf, int tipo_usuario, string senha)
+        {
+            
+            Nome = nome;
+            Email = email;
+            Cpf = cpf;
+            Tipo_Usuario = tipo_usuario;
+            Senha = senha;
+        }
+        public Usuario (DateTime criado_em)
+        {
+            Criado_Em = criado_em;
+        }
+        public Usuario(string email,  string senha, bool ativo)
+        {
+            Email = email;
+            Senha = senha;
+            Ativo = ativo;
+
+        }
+
         public static Usuario ObterPorId(int id)
         {
             Usuario usuario = new Usuario();
@@ -41,7 +80,12 @@ namespace ControleDeAcessoClass
                 dr.GetString(1),
                 dr.GetString(2),
                 dr.GetString(3),
-                dr.GetString(4)
+                dr.GetInt32(4),
+                dr.GetString(5),
+                dr.GetValue(6) == DBNull.Value ? null : (byte[])dr.GetValue(6),
+                dr.GetDateTime(7),
+                dr.GetBoolean(8)
+
                 );
 
             }
@@ -61,8 +105,8 @@ namespace ControleDeAcessoClass
                 dr.GetInt32(0),
                 dr.GetString(1),
                 dr.GetString(2),
-                dr.GetString(3),
-                dr.GetString(4)
+                dr.GetString(3)
+          
                 );
 
             }
@@ -71,14 +115,44 @@ namespace ControleDeAcessoClass
 
         public void Inserir()
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"insert into usuario (nome, cpf, email, senha) " +
-                $"values ('{Nome}','{Email}',md5('{Senha}')";
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = "SELECT LAST_INSERT_ID()";
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            {
+                var cmd = Banco.Abrir();
+                cmd.CommandType = CommandType.Text;
 
+
+                cmd.CommandText = $"INSERT INTO usuarios (nome, cpf, email, tipo_usuario, senha, ativo) " +
+                   $"VALUES ('{Nome}', '{Cpf}', '{Email}', {Tipo_Usuario}, MD5('{Senha}'), 1)";
+
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "SELECT LAST_INSERT_ID()";
+                Id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
+
+
+        public static Usuario EfetuarLogin(string email, string senha)
+        {
+            Usuario usuario = new Usuario();
+            string sql = "SELECT * FROM usuarios WHERE email = @Email AND senha = MD5(@Senha)";
+
+            var cmd = Banco.Abrir();
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Senha", senha);
+
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                usuario.Id = dr.GetInt32("id");
+                usuario.Nome = dr.GetString("nome");
+                usuario.Email = dr.GetString("email");
+                usuario.Ativo = dr.GetBoolean("ativo");
+                
+            }
+
+            return usuario;
         }
 
     }

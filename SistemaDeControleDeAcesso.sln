@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35818.85 d17.13
+VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeAcessoForm", "ControleDeAcessoForm\ControleDeAcessoForm.csproj", "{07EEA367-4BFC-4577-8242-CEA50A3E862B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AA3946B3-85FF-4A44-B54E-D49C67FB0AB1} = {AA3946B3-85FF-4A44-B54E-D49C67FB0AB1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeAcessoClass", "ControleDeAcessoClass\ControleDeAcessoClass.csproj", "{AA3946B3-85FF-4A44-B54E-D49C67FB0AB1}"
 EndProject

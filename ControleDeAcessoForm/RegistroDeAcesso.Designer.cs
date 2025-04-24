@@ -1,6 +1,6 @@
 ﻿namespace ControleDeAcessoForm
 {
-    partial class ConsultaDeAcesso
+    partial class RegistroDeAcesso
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(103, 151);
+            dataGridView1.Location = new Point(123, 157);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(568, 234);
             dataGridView1.TabIndex = 0;
@@ -44,20 +44,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(287, 77);
+            label1.Location = new Point(332, 84);
             label1.Name = "label1";
-            label1.Size = new Size(110, 15);
+            label1.Size = new Size(106, 15);
             label1.TabIndex = 1;
-            label1.Text = "Consulta de Acesso";
+            label1.Text = "Registro de Acesso";
+            label1.Click += label1_Click;
             // 
-            // ConsultaDeAcesso
+            // RegistroDeAcesso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
-            Name = "ConsultaDeAcesso";
+            Name = "RegistroDeAcesso";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ControleDeAcessoForm
 {
-    public partial class ConsultaDeAcesso: Form
+    public partial class RegistroDeAcesso : Form
     {
-        public ConsultaDeAcesso()
+        public RegistroDeAcesso()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

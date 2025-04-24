@@ -44,7 +44,7 @@
             bntCadastrar.TabIndex = 0;
             bntCadastrar.Text = "cadastrar-se";
             bntCadastrar.UseVisualStyleBackColor = true;
-            bntCadastrar.Click += this.bntCadastrar_Click;
+            bntCadastrar.Click += bntCadastrar_Click;
             // 
             // bntEntrar
             // 
@@ -54,6 +54,7 @@
             bntEntrar.TabIndex = 1;
             bntEntrar.Text = "Entrar";
             bntEntrar.UseVisualStyleBackColor = true;
+            bntEntrar.Click += bntEntrar_Click;
             // 
             // txtEmail
             // 
