@@ -35,12 +35,11 @@
             label1 = new Label();
             label2 = new Label();
             checkBox1 = new CheckBox();
-            bntConsultar = new Button();
             SuspendLayout();
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(163, 217);
+            bntCadastrar.Location = new Point(111, 155);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(97, 23);
             bntCadastrar.TabIndex = 0;
@@ -50,7 +49,7 @@
             // 
             // bntEntrar
             // 
-            bntEntrar.Location = new Point(265, 217);
+            bntEntrar.Location = new Point(213, 155);
             bntEntrar.Name = "bntEntrar";
             bntEntrar.Size = new Size(75, 23);
             bntEntrar.TabIndex = 1;
@@ -61,7 +60,7 @@
             // txtEmail
             // 
             txtEmail.AcceptsReturn = true;
-            txtEmail.Location = new Point(162, 129);
+            txtEmail.Location = new Point(108, 72);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(178, 23);
             txtEmail.TabIndex = 2;
@@ -69,7 +68,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(163, 180);
+            txtSenha.Location = new Point(111, 118);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(178, 23);
             txtSenha.TabIndex = 3;
@@ -78,7 +77,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(118, 137);
+            label1.Location = new Point(66, 75);
             label1.Name = "label1";
             label1.Size = new Size(36, 15);
             label1.TabIndex = 4;
@@ -87,7 +86,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(118, 183);
+            label2.Location = new Point(66, 121);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 5;
@@ -96,7 +95,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(347, 180);
+            checkBox1.Location = new Point(304, 118);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(42, 19);
             checkBox1.TabIndex = 6;
@@ -104,22 +103,12 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // bntConsultar
-            // 
-            bntConsultar.Location = new Point(365, 217);
-            bntConsultar.Name = "bntConsultar";
-            bntConsultar.Size = new Size(75, 23);
-            bntConsultar.TabIndex = 7;
-            bntConsultar.Text = "Consultar";
-            bntConsultar.UseVisualStyleBackColor = true;
-            bntConsultar.Click += bntConsultar_Click;
-            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(bntConsultar);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(417, 251);
             Controls.Add(checkBox1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -143,6 +132,5 @@
         private Label label1;
         private Label label2;
         private CheckBox checkBox1;
-        private Button bntConsultar;
     }
 }

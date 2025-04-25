@@ -20,23 +20,32 @@ namespace ControleDeAcessoForm
 
         private void bntEntrar_Click(object sender, EventArgs e)
         {
-            var usuario = Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
 
-            if (usuario.Id > 0)
+            var usuario = Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
+            if (usuario != null && usuario.Ativo)
             {
-                if (usuario.Ativo)
+                usuario.RegistrarEntrada();
+                usuario.RegistrarSaida();
+
+                if (usuario.Id > 0)
                 {
-                    MessageBox.Show($"Bem-vindo(a), {usuario.Nome}!", "Login");
-                    Close();
+                    if (usuario.Ativo)
+                    {
+
+                        FrmInicial frmInicial = new();
+                        frmInicial.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sua conta está inativa.\nProcure o administrador.", "Conta inativa");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Sua conta está inativa.\nProcure o administrador.", "Conta inativa");
+                    MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
+
             }
         }
 
@@ -53,9 +62,7 @@ namespace ControleDeAcessoForm
 
         private void bntConsultar_Click(object sender, EventArgs e)
         {
-            RegistroDeAcesso registroDeAcesso = new();
-            registroDeAcesso.Show();
-            this.Hide();
+           
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)

@@ -34,7 +34,7 @@ namespace ControleDeAcessoForm
 
         private void bntCadastrar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new(txtNome.Text, txtEmail.Text, txtCpf.Text, cmbTipo.SelectedIndex + 1, txtSenha.Text);
+            Usuario usuario = new(txtNome.Text, txtEmail.Text, txtCpf.Text, cmbTipo.Text , txtSenha.Text);
             usuario.Inserir();
             txtId.Text = usuario.Id.ToString();
             MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");

@@ -27,6 +27,18 @@ namespace ControleDeAcessoForm
         {
 
 
+            var usuario = Usuario.ObterPorNome(txtNome.Text.Trim());
+
+            if (usuario != null)
+            {
+                txtNome.Text = usuario.Nome;
+                txtEntrada.Text = usuario.Entrada.ToString();
+                txtSaida.Text = usuario.Saida.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -34,7 +46,25 @@ namespace ControleDeAcessoForm
         {
             int linha = dgvUsuarios.CurrentRow.Index;
             int id = Convert.ToInt32(dgvUsuarios.Rows[linha].Cells[0].Value);
-            bool ativo = Convert.ToBoolean(dgvUsuarios.Rows[linha].Cells[3].Value);
+            DateTime entrada = Convert.ToDateTime(dgvUsuarios.Rows[linha].Cells[2].Value);
+            DateTime saida = Convert.ToDateTime(dgvUsuarios.Rows[linha].Cells[3].Value);
+
+        }
+
+        private void RegistroDeAcesso_Load(object sender, EventArgs e)
+        {
+            {
+                var lista = Usuario.ObterListaComRegistro();
+                dgvUsuarios.Rows.Clear();
+                foreach (var usuario in lista)
+                {
+                    dgvUsuarios.Rows.Add(usuario.Id, usuario.Nome, usuario.Entrada, usuario.Saida);
+                }
+            }
+        }
+
+        private void dtEntrada_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
