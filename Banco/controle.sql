@@ -1,17 +1,5 @@
 create database  Controledeacesso;
 
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    cpf VARCHAR(14) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    tipo_usuario ENUM('Administrador', 'Funcionário', 'Visitante') NOT NULL,
-    senha VARCHAR(255) NOT NULL,
-    foto BLOB,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ativo TINYINT(1) NOT NULL DEFAULT 1
-
-);
 select * from  usuarios;
 CREATE TABLE Usuarios (
     Id INT PRIMARY KEY AUTO_INCREMENT,
@@ -28,14 +16,10 @@ CREATE TABLE Usuarios (
 CREATE TABLE RegistroDeAcesso (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     Usuario_Id INT,
-    DataHora DATETIME,
-    TipoOperacao VARCHAR(45),
+    Entrada DATETIME,
+    Saida datetime,
     FOREIGN KEY (Usuario_Id) REFERENCES Usuarios(Id)
 );
 
-CREATE TABLE Autenticador (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    ValidarLogin BIT(1),
-    Usuario_Id INT,
-    FOREIGN KEY (Usuario_Id) REFERENCES Usuario(Id)
-);
+
+select * from  RegistroDeAcesso;
