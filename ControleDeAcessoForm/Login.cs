@@ -62,12 +62,22 @@ namespace ControleDeAcessoForm
 
         private void bntConsultar_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

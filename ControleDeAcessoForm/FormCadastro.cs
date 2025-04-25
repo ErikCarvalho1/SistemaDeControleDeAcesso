@@ -34,7 +34,7 @@ namespace ControleDeAcessoForm
 
         private void bntCadastrar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new(txtNome.Text, txtEmail.Text, txtCpf.Text, cmbTipo.Text , txtSenha.Text);
+            Usuario usuario = new(txtNome.Text, txtEmail.Text, txtCpf.Text, cmbTipo.Text, txtSenha.Text);
             usuario.Inserir();
             txtId.Text = usuario.Id.ToString();
             MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
@@ -47,6 +47,11 @@ namespace ControleDeAcessoForm
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

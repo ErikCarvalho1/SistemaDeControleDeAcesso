@@ -42,6 +42,7 @@
             txtNome = new TextBox();
             label5 = new Label();
             txtId = new TextBox();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -134,7 +135,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(313, 93);
+            pictureBox1.Location = new Point(313, 84);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(104, 64);
             pictureBox1.TabIndex = 10;
@@ -163,11 +164,24 @@
             txtId.Size = new Size(100, 23);
             txtId.TabIndex = 13;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.Red;
+            linkLabel1.Location = new Point(560, 348);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(26, 15);
+            linkLabel1.TabIndex = 14;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Sair";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // FormCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(598, 372);
+            Controls.Add(linkLabel1);
             Controls.Add(txtId);
             Controls.Add(label5);
             Controls.Add(txtNome);
@@ -206,5 +220,6 @@
         private TextBox txtNome;
         private Label label5;
         private TextBox txtId;
+        private LinkLabel linkLabel1;
     }
 }

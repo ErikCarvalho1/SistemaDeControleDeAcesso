@@ -34,12 +34,14 @@
             txtSenha = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            label3 = new Label();
             checkBox1 = new CheckBox();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(111, 155);
+            bntCadastrar.Location = new Point(75, 170);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(97, 23);
             bntCadastrar.TabIndex = 0;
@@ -49,7 +51,7 @@
             // 
             // bntEntrar
             // 
-            bntEntrar.Location = new Point(213, 155);
+            bntEntrar.Location = new Point(177, 170);
             bntEntrar.Name = "bntEntrar";
             bntEntrar.Size = new Size(75, 23);
             bntEntrar.TabIndex = 1;
@@ -60,7 +62,7 @@
             // txtEmail
             // 
             txtEmail.AcceptsReturn = true;
-            txtEmail.Location = new Point(108, 72);
+            txtEmail.Location = new Point(72, 87);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(178, 23);
             txtEmail.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(111, 118);
+            txtSenha.Location = new Point(75, 133);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(178, 23);
             txtSenha.TabIndex = 3;
@@ -77,7 +79,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(66, 75);
+            label1.Location = new Point(30, 90);
             label1.Name = "label1";
             label1.Size = new Size(36, 15);
             label1.TabIndex = 4;
@@ -86,16 +88,27 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(66, 121);
+            label2.Location = new Point(30, 136);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 5;
             label2.Text = "Senha";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Britannic Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(121, 37);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 30);
+            label3.TabIndex = 7;
+            label3.Text = "Login";
+            label3.Click += label3_Click;
+            // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(304, 118);
+            checkBox1.Location = new Point(269, 133);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(42, 19);
             checkBox1.TabIndex = 6;
@@ -103,13 +116,27 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.Red;
+            linkLabel1.Location = new Point(309, 241);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(26, 15);
+            linkLabel1.TabIndex = 8;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Sair";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(417, 251);
+            BackColor = Color.White;
+            ClientSize = new Size(347, 265);
+            Controls.Add(linkLabel1);
             Controls.Add(checkBox1);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtSenha);
@@ -131,6 +158,8 @@
         private TextBox txtSenha;
         private Label label1;
         private Label label2;
+        private Label label3;
         private CheckBox checkBox1;
+        private LinkLabel linkLabel1;
     }
 }

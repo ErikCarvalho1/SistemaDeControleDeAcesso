@@ -43,6 +43,7 @@
             Nome = new Label();
             label2 = new Label();
             label3 = new Label();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -153,11 +154,24 @@
             label3.TabIndex = 10;
             label3.Text = "Saida";
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.Red;
+            linkLabel1.Location = new Point(728, 426);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(26, 15);
+            linkLabel1.TabIndex = 11;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Sair";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // RegistroDeAcesso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(Nome);
@@ -191,5 +205,6 @@
         private DataGridViewTextBoxColumn clnNome;
         private DataGridViewTextBoxColumn clnEntrada;
         private DataGridViewTextBoxColumn clnSaida;
+        private LinkLabel linkLabel1;
     }
 }

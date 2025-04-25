@@ -30,11 +30,13 @@
         {
             bntConsultar = new Button();
             bntSair = new Button();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // bntConsultar
             // 
-            bntConsultar.Location = new Point(298, 132);
+            bntConsultar.Location = new Point(159, 138);
             bntConsultar.Name = "bntConsultar";
             bntConsultar.Size = new Size(75, 23);
             bntConsultar.TabIndex = 8;
@@ -44,7 +46,7 @@
             // 
             // bntSair
             // 
-            bntSair.Location = new Point(298, 177);
+            bntSair.Location = new Point(159, 201);
             bntSair.Name = "bntSair";
             bntSair.Size = new Size(75, 23);
             bntSair.TabIndex = 9;
@@ -52,16 +54,27 @@
             bntSair.UseVisualStyleBackColor = true;
             bntSair.Click += bntSair_Click;
             // 
+            // panel1
+            // 
+          
+            panel1.Controls.Add(bntSair);
+            panel1.Controls.Add(bntConsultar);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 450);
+            panel1.TabIndex = 10;
+            // 
             // FrmInicial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(bntSair);
-            Controls.Add(bntConsultar);
+            Controls.Add(panel1);
             Name = "FrmInicial";
             Text = "Inicialcs";
             Load += FrmInicialcs_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -69,5 +82,6 @@
 
         private Button bntConsultar;
         private Button bntSair;
+        private Panel panel1;
     }
 }
