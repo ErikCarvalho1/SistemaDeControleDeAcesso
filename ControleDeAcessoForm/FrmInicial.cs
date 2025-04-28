@@ -30,11 +30,13 @@ namespace ControleDeAcessoForm
             registroDeAcesso.Show();
             this.Hide();
             
+
         }
 
         private void bntSair_Click(object sender, EventArgs e)
         {
-            
+            var usuario = new Usuario();
+            usuario.RegistrarSaida();
             Application.Exit();
 
         }

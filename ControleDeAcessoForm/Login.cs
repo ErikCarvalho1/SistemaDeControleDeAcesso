@@ -25,7 +25,7 @@ namespace ControleDeAcessoForm
             if (usuario != null && usuario.Ativo)
             {
                 usuario.RegistrarEntrada();
-                usuario.RegistrarSaida();
+                
 
                 if (usuario.Id > 0)
                 {

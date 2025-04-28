@@ -53,5 +53,13 @@ namespace ControleDeAcessoForm
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            var usuario = new Usuario();
+            usuario.RegistrarSaida();
+
+        }
     }
 }
